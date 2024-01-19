@@ -81,16 +81,21 @@ public class Main {
             try {
 
                 //Inserting key-value pairs into the json object
-                jsonObject.put("ID", i );
-                jsonObject.put("Product", (shopCart.getProducts().get(i)).getName());
-                jsonObject.put("Quantity", (shopCart.getQuantity().get(i)).toString() );
-                jsonObject.put("Price", (shopCart.getProducts().get(i)).getPrice() );
-                jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
-                jsonObject.put("\\n",  (shopCart.getTotal().get(i)).toString());
+
+                try {
+                    jsonObject.put("ID", i );
+                    jsonObject.put("Product", (shopCart.getProducts().get(i)).getName());
+                    jsonObject.put("Quantity", (shopCart.getQuantity().get(i)).toString() );
+                    jsonObject.put("Price", (shopCart.getProducts().get(i)).getPrice() );
+                    jsonObject.put("Total\\n",  (shopCart.getTotal().get(i)).toString());
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                } finally {
+                }
 
                 file.write(jsonObject.toJSONString());
 
-            } catch (IOException e) {
+            } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
