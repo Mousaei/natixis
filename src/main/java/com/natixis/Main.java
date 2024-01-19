@@ -94,7 +94,7 @@ public class Main {
                 file.write(jsonObject.toJSONString());
             } catch (IOException e) {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
+                //e.printStackTrace();
             }
             //System.out.println("JSON file created: "+jsonObject);
         }
