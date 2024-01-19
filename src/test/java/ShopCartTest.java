@@ -20,9 +20,8 @@ public class ShopCartTest {
         Product aPen = new Product();
         aPen.setPrice(1.50F);
 
-        Product secondPen = aPen;
-
+        System.out.println("secondPen: " + aPen.getPrice());
         // Assert
-        assertSame( aPen, secondPen);
+        assertSame( aPen, aPen);
     }
 }
