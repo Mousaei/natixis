@@ -20,14 +20,14 @@ public class Main {
         StringBuilder jsonBuffer = new StringBuilder();
 
         for(int i = 0; i<3; i++) {
-            Product product = new Product();
-            product.setName("Pen");
-            product.setPrice(1.50F);
-            products.add(product);
-
             totalProduct = totalProduct + 1.50F;
-
         }
+
+        Product product = new Product();
+        product.setName("Pen ");
+        product.setPrice(1.50F);
+
+        products.add(product);
 
         quantities.add(new Integer(3));
         total.add(totalProduct);
@@ -40,14 +40,14 @@ public class Main {
         totalProduct = 0F;
 
         for(int i = 0; i<2; i++) {
-            Product product = new Product();
-            product.setName("Book");
-            product.setPrice(8.00F);
-            products.add(product);
-
             totalProduct = totalProduct + 8F;
+         }
 
-        }
+        Product productB = new Product();
+        productB.setName("Book");
+        productB.setPrice(8.00F);
+
+        products.add(productB);
 
         quantities.add(new Integer(2));
         total.add(totalProduct);
