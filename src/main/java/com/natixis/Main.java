@@ -85,12 +85,18 @@ public class Main {
 
 
 
-                file.write(jsonObject.toJSONString());
-
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 System.out.println(jsonBuffer);
            }
+
+            try {
+                file.write(jsonObject.toJSONString());
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            //System.out.println("JSON file created: "+jsonObject);
         }
         try {
             file.close();
