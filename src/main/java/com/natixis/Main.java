@@ -101,13 +101,5 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        //jsonObject.put("ID", "2");
-        //jsonObject.put("Product", "Book");
-        //jsonObject.put("Quantity", "2");
-        //jsonObject.put("Price", "8");
-        //jsonObject.put("Total", "16");
-
-
-
     }
 }
