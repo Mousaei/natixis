@@ -62,12 +62,8 @@ public class Main {
         System.out.println("-------------------------------------------");
         jsonBuffer.append("-------------------------------------------");
 
-        String beforeName =  "";
-
-        Product beforeProduct = new Product();
-
         JSONObject jsonObject = new JSONObject();
-        FileWriter file = null;
+        FileWriter file;
         try {
             file = new FileWriter("output.json");
         } catch (IOException e) {
@@ -82,16 +78,16 @@ public class Main {
                     "       " + (shopCart.getProducts().get(i)).getPrice() + "        " +  (shopCart.getTotal().get(i)).toString() );
 
 
-            //Inserting key-value pairs into the json object
-            jsonObject.put("ID", i );
-            jsonObject.put("Product", (shopCart.getProducts().get(i)).getName());
-            jsonObject.put("Quantity", (shopCart.getQuantity().get(i)).toString() );
-            jsonObject.put("Price", (shopCart.getProducts().get(i)).getPrice() );
-            jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
-            jsonObject.put("\\n",  (shopCart.getTotal().get(i)).toString());
-
-
             try {
+
+                //Inserting key-value pairs into the json object
+                jsonObject.put("ID", i );
+                jsonObject.put("Product", (shopCart.getProducts().get(i)).getName());
+                jsonObject.put("Quantity", (shopCart.getQuantity().get(i)).toString() );
+                jsonObject.put("Price", (shopCart.getProducts().get(i)).getPrice() );
+                jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
+                jsonObject.put("\\n",  (shopCart.getTotal().get(i)).toString());
+
                 file.write(jsonObject.toJSONString());
 
             } catch (IOException e) {
