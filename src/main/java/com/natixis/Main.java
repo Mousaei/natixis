@@ -29,7 +29,7 @@ public class Main {
 
         products.add(product);
 
-        quantities.add(new Integer(3));
+        quantities.add(3);
         total.add(totalProduct);
 
         shopCart.setProducts(products);
@@ -49,7 +49,7 @@ public class Main {
 
         products.add(productB);
 
-        quantities.add(new Integer(2));
+        quantities.add(2);
         total.add(totalProduct);
 
         shopCart.setProducts(products);
