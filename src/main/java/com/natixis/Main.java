@@ -91,15 +91,13 @@ public class Main {
                     jsonObject.put("\\n",  "");
                 } catch (Exception e) {
                     throw new RuntimeException(e);
-                } finally {
                 }
 
                 file.write(jsonObject.toJSONString());
 
             } catch (Exception e) {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+           }
         }
         try {
             file.close();
