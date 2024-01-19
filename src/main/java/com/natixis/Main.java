@@ -64,6 +64,7 @@ public class Main {
         jsonBuffer.append("-------------------------------------------");
 
         JSONObject jsonObject = new JSONObject();
+        JSONObject shopJsonCart = new JSONObject();
         FileWriter file;
         try {
             file = new FileWriter("output.json");
@@ -83,8 +84,7 @@ public class Main {
                     jsonObject.put("Price", shopCart.getProducts().get(i).getPrice() );
                     jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
 
-                    JSONObject employeeObject = new JSONObject();
-                    employeeObject.put("shopCart", jsonObject);
+                    shopJsonCart.put("shopCart", jsonObject);
 
 
 
