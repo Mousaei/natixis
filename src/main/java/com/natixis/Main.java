@@ -66,26 +66,30 @@ public class Main {
 
         Product beforeProduct = new Product();
 
+        JSONObject jsonObject = new JSONObject();
+
         for(int i = 0; i < 2; i++) {
             System.out.println( (shopCart.getProducts().get(i)).getName() + "           " + (shopCart.getQuantity().get(i)).toString() +
                     "       " + (shopCart.getProducts().get(i)).getPrice() + "         " +  (shopCart.getTotal().get(i)).toString() );
 
             jsonBuffer.append( shopCart.getProducts().get(i).getName() + "        " + (shopCart.getQuantity().get(i)).toString() +
                     "       " + (shopCart.getProducts().get(i)).getPrice() + "        " +  (shopCart.getTotal().get(i)).toString() );
-        }
-        JSONObject jsonObject = new JSONObject();
-        //Inserting key-value pairs into the json object
-        jsonObject.put("ID", "1");
-        jsonObject.put("Product", "Pen");
-        jsonObject.put("Quantity", "3");
-        jsonObject.put("Price", "1.50");
-        jsonObject.put("Total", "4.50");
 
-        jsonObject.put("ID", "2");
-        jsonObject.put("Product", "Book");
-        jsonObject.put("Quantity", "2");
-        jsonObject.put("Price", "8");
-        jsonObject.put("Total", "16");
+
+            //Inserting key-value pairs into the json object
+            jsonObject.put("ID", i );
+            jsonObject.put("Product", (shopCart.getProducts().get(i)).getName());
+            jsonObject.put("Quantity", (shopCart.getQuantity().get(i)).toString() );
+            jsonObject.put("Price", (shopCart.getProducts().get(i)).getPrice() );
+            jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
+        }
+
+
+        //jsonObject.put("ID", "2");
+        //jsonObject.put("Product", "Book");
+        //jsonObject.put("Quantity", "2");
+        //jsonObject.put("Price", "8");
+        //jsonObject.put("Total", "16");
 
 
         try {
