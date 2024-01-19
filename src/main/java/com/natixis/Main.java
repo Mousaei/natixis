@@ -18,6 +18,7 @@ public class Main {
         List<Float> total = new ArrayList<>();
 
         float totalProduct = 0F;
+        float totalShopCart;
 
         StringBuilder jsonBuffer = new StringBuilder();
 
@@ -38,6 +39,8 @@ public class Main {
         shopCart.setQuantity(quantities);
         shopCart.setTotal(total);
 
+        totalShopCart = totalProduct;
+
 
         totalProduct = 0F;
 
@@ -57,6 +60,8 @@ public class Main {
         shopCart.setProducts(products);
         shopCart.setQuantity(quantities);
         shopCart.setTotal(total);
+
+        totalShopCart += totalProduct;
 
 
         System.out.println("Product    Quantity    Price    Total");
@@ -107,8 +112,8 @@ public class Main {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("JSON file created: ");
+            //System.out.println("JSON file created: ");
         }
-
+        System.out.printf("                                   %s%n", totalShopCart);
     }
 }
