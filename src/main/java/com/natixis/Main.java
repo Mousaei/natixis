@@ -107,7 +107,7 @@ public class Main {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            //System.out.println("JSON file created: "+jsonObject);
+            System.out.println("JSON file created: ");
         }
 
     }
