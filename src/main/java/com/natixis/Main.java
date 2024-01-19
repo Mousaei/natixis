@@ -94,7 +94,7 @@ public class Main {
            }
 
             try {
-                file.write(jsonObject.toJSONString());
+                file.write(shopJsonCart.toJSONString());
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 //e.printStackTrace();
