@@ -1,7 +1,11 @@
-package org.example;
+package com.natixis;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.simple.JSONObject;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,13 +31,15 @@ public class Main {
 
         }
 
-        quantities.set(0 , new Integer(3));
-        total.set(0, totalProduct);
+        quantities.add(new Integer(3));
+        total.add(totalProduct);
 
         shopCart.setProducts(products);
         shopCart.setQuantity(quantities);
         shopCart.setTotal(total);
 
+
+        totalProduct =0F;
 
         for(int i = 0; i<2; i++) {
             Product product = new Product();
@@ -41,14 +47,12 @@ public class Main {
             product.setPrice(8F);
             products.add(product);
 
-            quantities.add(new Integer(i));
             totalProduct = totalProduct + 8F;
 
-            total.add(totalProduct);
         }
 
-        quantities.set(1 , new Integer(2));
-        total.set(1 , totalProduct);
+        quantities.add(new Integer(2));
+        total.add(totalProduct);
 
         shopCart.setProducts(products);
         shopCart.setQuantity(quantities);
@@ -64,12 +68,30 @@ public class Main {
 
         Product beforeProduct = new Product();
 
-        for(int i = 0; i < 5; i++) {
-            System.out.println( (shopCart.getProducts().get(0)).getName() + "    " + (shopCart.getQuantity().get(i)).toString() +
-                    "    " + (shopCart.getProducts().get(i)).getPrice() + "    " +  (shopCart.getTotal().get(i)).toString() );
+        for(int i = 0; i < 2; i++) {
+            System.out.println( (shopCart.getProducts().get(i)).getName() + "           " + (shopCart.getQuantity().get(i)).toString() +
+                    "    " + (shopCart.getProducts().get(i)).getPrice() + "         " +  (shopCart.getTotal().get(i)).toString() );
 
-            jsonBuffer.append((shopCart.getProducts().get(0)).getName() + "    " + (shopCart.getQuantity().get(i)).toString() +
-                    "    " + (shopCart.getProducts().get(i)).getPrice() + "    " +  (shopCart.getTotal().get(i)).toString() );
+            jsonBuffer.append( shopCart.getProducts().get(i).getName() + "        " + (shopCart.getQuantity().get(i)).toString() +
+                    "    " + (shopCart.getProducts().get(i)).getPrice() + "        " +  (shopCart.getTotal().get(i)).toString() );
         }
+        JSONObject jsonObject = new JSONObject();
+        //Inserting key-value pairs into the json object
+        jsonObject.put("ID", "1");
+        jsonObject.put("First_Name", "Shikhar");
+        jsonObject.put("Last_Name", "Dhawan");
+        jsonObject.put("Date_Of_Birth", "1981-12-05");
+        jsonObject.put("Place_Of_Birth", "Delhi");
+        jsonObject.put("Country", "India");
+
+        try {
+            FileWriter file = new FileWriter("output.json");
+            file.write(jsonObject.toJSONString());
+            file.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
     }
 }

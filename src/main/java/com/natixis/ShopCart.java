@@ -1,7 +1,6 @@
-package org.example;
+package com.natixis;
 
 import java.util.List;
-import java.util.Objects;
 
 public class ShopCart {
 
