@@ -15,7 +15,7 @@ public class Main {
         List<Integer> quantities = new ArrayList<>();
         List<Float> total = new ArrayList<>();
 
-        float totalProduct =0F;
+        float totalProduct = 0F;
 
         StringBuilder jsonBuffer = new StringBuilder();
 
@@ -25,9 +25,7 @@ public class Main {
             product.setPrice(1.50F);
             products.add(product);
 
-
             totalProduct = totalProduct + 1.50F;
-
 
         }
 
@@ -39,12 +37,12 @@ public class Main {
         shopCart.setTotal(total);
 
 
-        totalProduct =0F;
+        totalProduct = 0F;
 
         for(int i = 0; i<2; i++) {
             Product product = new Product();
             product.setName("Book");
-            product.setPrice(8F);
+            product.setPrice(8.00F);
             products.add(product);
 
             totalProduct = totalProduct + 8F;
@@ -70,19 +68,25 @@ public class Main {
 
         for(int i = 0; i < 2; i++) {
             System.out.println( (shopCart.getProducts().get(i)).getName() + "           " + (shopCart.getQuantity().get(i)).toString() +
-                    "    " + (shopCart.getProducts().get(i)).getPrice() + "         " +  (shopCart.getTotal().get(i)).toString() );
+                    "       " + (shopCart.getProducts().get(i)).getPrice() + "         " +  (shopCart.getTotal().get(i)).toString() );
 
             jsonBuffer.append( shopCart.getProducts().get(i).getName() + "        " + (shopCart.getQuantity().get(i)).toString() +
-                    "    " + (shopCart.getProducts().get(i)).getPrice() + "        " +  (shopCart.getTotal().get(i)).toString() );
+                    "       " + (shopCart.getProducts().get(i)).getPrice() + "        " +  (shopCart.getTotal().get(i)).toString() );
         }
         JSONObject jsonObject = new JSONObject();
         //Inserting key-value pairs into the json object
         jsonObject.put("ID", "1");
-        jsonObject.put("First_Name", "Shikhar");
-        jsonObject.put("Last_Name", "Dhawan");
-        jsonObject.put("Date_Of_Birth", "1981-12-05");
-        jsonObject.put("Place_Of_Birth", "Delhi");
-        jsonObject.put("Country", "India");
+        jsonObject.put("Product", "Pen");
+        jsonObject.put("Quantity", "3");
+        jsonObject.put("Price", "1.50");
+        jsonObject.put("Total", "4.50");
+
+        jsonObject.put("ID", "2");
+        jsonObject.put("Product", "Book");
+        jsonObject.put("Quantity", "2");
+        jsonObject.put("Price", "8");
+        jsonObject.put("Total", "16");
+
 
         try {
             FileWriter file = new FileWriter("output.json");
