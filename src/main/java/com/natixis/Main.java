@@ -87,7 +87,8 @@ public class Main {
                     jsonObject.put("Product", (shopCart.getProducts().get(i)).getName());
                     jsonObject.put("Quantity", (shopCart.getQuantity().get(i)).toString() );
                     jsonObject.put("Price", (shopCart.getProducts().get(i)).getPrice() );
-                    jsonObject.put("Total\\n",  (shopCart.getTotal().get(i)).toString());
+                    jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
+                    jsonObject.put("\\n",  "");
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 } finally {
