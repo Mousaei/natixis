@@ -78,12 +78,12 @@ public class Main {
 
                 //Inserting key-value pairs into the json object
 
-                    jsonObject.put("ID", i );
+                    jsonObject.put("ID", i + "\\n");
                     jsonObject.put("Product", (shopCart.getProducts().get(i)).getName());
                     jsonObject.put("Quantity", (shopCart.getQuantity().get(i)).toString() );
                     jsonObject.put("Price", shopCart.getProducts().get(i).getPrice() );
-                    jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
-                    jsonObject.put("\\n",  "");
+                    jsonObject.put("Total\\n",  (shopCart.getTotal().get(i)).toString());
+
 
 
                 file.write(jsonObject.toJSONString());
