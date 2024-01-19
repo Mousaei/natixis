@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class Main {
@@ -64,13 +65,9 @@ public class Main {
         jsonBuffer.append("-------------------------------------------");
 
         JSONObject jsonObject = new JSONObject();
-        JSONObject shopJsonCart = new JSONObject();
+        JSONArray shopJsonCart = new JSONArray();
         FileWriter file;
-        try {
-            file = new FileWriter("output.json");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
 
         for(int i = 0; i < 2; i++) {
             System.out.println((shopCart.getProducts().get(i)).getName() + "           " + (shopCart.getQuantity().get(i)).toString() + "       " + (shopCart.getProducts().get(i)).getPrice() + "         " + (shopCart.getTotal().get(i)).toString());
@@ -84,9 +81,7 @@ public class Main {
                     jsonObject.put("Price", shopCart.getProducts().get(i).getPrice() );
                     jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
 
-                    shopJsonCart.put("shopCart", jsonObject);
-
-
+                    shopJsonCart.add(jsonObject);
 
             } catch (Exception e) {
                 // TODO Auto-generated catch block
@@ -94,17 +89,25 @@ public class Main {
            }
 
             try {
+                file = new FileWriter("output.json");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            try {
                 file.write(shopJsonCart.toJSONString());
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 //e.printStackTrace();
             }
+
+
+            try {
+                file.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             //System.out.println("JSON file created: "+jsonObject);
-        }
-        try {
-            file.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
 
     }
