@@ -104,12 +104,12 @@ public class Main {
         try {
             file.write(shopJsonCart.toJSONString());
         } catch (IOException e) {
-            // TODO Auto-generated catch block
-            //e.printStackTrace();
+            System.out.println(jsonBuffer);
         }
         try {
             file.close();
         } catch (IOException e) {
+            System.out.println(jsonBuffer);
             throw new RuntimeException(e);
         }
         System.out.printf("                                   %s%n", totalShopCart);
