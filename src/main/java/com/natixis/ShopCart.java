@@ -1,11 +1,12 @@
 package com.natixis;
 
 import java.util.List;
+import java.util.Set;
 
 public class ShopCart {
 
     private List<Integer> quantity;
-    private List<Product> Products;
+    private Set<Product> Products;
     private List<Float> total;
 
     public List<Integer> getQuantity() {
@@ -16,11 +17,11 @@ public class ShopCart {
         this.quantity = quantity;
     }
 
-    public List<Product> getProducts() {
+    public Set<Product> getProducts() {
         return Products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(Set<Product> products) {
         Products = products;
     }
 
