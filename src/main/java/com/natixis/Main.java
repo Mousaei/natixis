@@ -54,7 +54,6 @@ public class Main {
 
         totalShopCart += totalProduct;
 
-
         System.out.println("Product    Quantity    Price       Total");
         jsonBuffer.append("Product    Quantity    Price        Total");
         System.out.println("-------------------------------------------");
