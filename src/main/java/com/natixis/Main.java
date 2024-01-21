@@ -86,33 +86,31 @@ public class Main {
                     jsonObject.put("Price", shopCart.getProducts().get(i).getPrice() );
                     jsonObject.put("Total",  (shopCart.getTotal().get(i)).toString());
 
-                    shopJsonCart.add(jsonObject);
+                    shopJsonCart.add(jsonObject.toJSONString());
+
+
 
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 System.out.println(jsonBuffer);
            }
 
-            try {
-                file = new FileWriter("output.json");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            try {
-                file.write(shopJsonCart.toJSONString());
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                //e.printStackTrace();
-            }
-
-
-            try {
-                file.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
             //System.out.println("JSON file created: ");
+        }
+        try {
+            file = new FileWriter("output.json");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            file.write(shopJsonCart.toJSONString());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            //e.printStackTrace();
+        }
+        try {
+            file.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
         System.out.printf("                                   %s%n", totalShopCart);
     }
