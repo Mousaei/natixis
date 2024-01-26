@@ -15,12 +15,9 @@ public class Main {
         Set<Product> products = new LinkedHashSet<>();
         List<Integer> quantities = new ArrayList<>();
         List<Float> total = new ArrayList<>();
-
         float totalProduct = 0F;
         float totalShopCart;
-
         StringBuilder jsonBuffer = new StringBuilder();
-
         for(int i = 0; i<3; i++) {
             totalProduct = totalProduct + 1.50F;
         }
@@ -34,14 +31,12 @@ public class Main {
         shopCart.setProducts(products);
         shopCart.setQuantity(quantities);
         shopCart.setTotal(total);
-
         totalShopCart = totalProduct;
         totalProduct = 0F;
 
         for(int i = 0; i<2; i++) {
             totalProduct = totalProduct + 8F;
          }
-
         Product bookProduct = new Product();
         bookProduct.setName("Book ");
         bookProduct.setPrice(8F);
@@ -53,7 +48,6 @@ public class Main {
         shopCart.setTotal(total);
 
         totalShopCart += totalProduct;
-
         System.out.println("Product    Quantity    Price       Total");
         jsonBuffer.append("Product    Quantity    Price        Total");
         System.out.println("-------------------------------------------");
@@ -62,9 +56,7 @@ public class Main {
         JSONObject jsonObject = new JSONObject();
         JSONArray shopJsonCart = new JSONArray();
         FileWriter file;
-
         List<Product> actualProducts = new ArrayList<>((shopCart.getProducts()));
-
         for(int i=0; i < 2; i++){
             Product currentProduct = actualProducts.get(i);
             System.out.println(currentProduct.getName() + "           " +
