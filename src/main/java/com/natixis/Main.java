@@ -11,6 +11,10 @@ public class Main {
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
+        InsuranceBeneficiary beneficiary = new InsuranceBeneficiary(02);
+        System.out.println("" + beneficiary.toString());
+
+
         ShopCart shopCart = new ShopCart();
         Set<Product> products = new LinkedHashSet<>();
         List<Integer> quantities = new ArrayList<>();
