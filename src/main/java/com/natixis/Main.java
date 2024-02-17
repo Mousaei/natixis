@@ -13,7 +13,7 @@ public class Main {
 
         InsuranceBeneficiary beneficiary = new InsuranceBeneficiary(2, "toto", "toto", "060709",
                 "toto@gmail.com" ,"75008");
-        System.out.println("The Beneficiary " + beneficiary.toString());
+        System.out.println("The Beneficiary " + beneficiary);
 
 
         ShopCart shopCart = new ShopCart();
