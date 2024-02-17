@@ -21,10 +21,6 @@ public class InsuranceBeneficiary {
         this.address = address;
     }
 
-    public InsuranceBeneficiary(int nss) {
-        this.nss = nss;
-    }
-
     @Override
     public String toString() {
         return "Beneficiary{" +

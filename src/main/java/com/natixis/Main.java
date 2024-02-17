@@ -11,9 +11,18 @@ public class Main {
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
-        InsuranceBeneficiary beneficiary = new InsuranceBeneficiary(2, "toto", "toto", "060709",
-                "toto@gmail.com" ,"75008");
+        InsuranceBeneficiary beneficiary = new InsuranceBeneficiary(2, "toto", "toto", "060709", "toto@gmail.com" ,"75008");
         System.out.println("The Beneficiary " + beneficiary);
+        beneficiary.setAddress("");
+
+        beneficiary.setEmail("");
+        beneficiary.setFirstName("");
+        beneficiary.setName("");
+
+        beneficiary.setNss(2);
+        beneficiary.setNoTel("");
+        System.out.println("The Beneficiary " + beneficiary.getAddress() + " " +  beneficiary.getFirstName()
+                + " " + beneficiary.getName() + " " + beneficiary.getEmail() + " " + beneficiary.getNss() + " " + beneficiary.getNoTel() );
 
 
         ShopCart shopCart = new ShopCart();
