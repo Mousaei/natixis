@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class DossierMedical {
-    private List<File> docuementMedical;
+    private List<File> documentMedical;
     private String motif;
     private List<String> antecedent;
     private List<String> TraitementHabituel;
@@ -37,7 +37,7 @@ public class DossierMedical {
     @Override
     public String toString() {
         return "DossierMedical{" +
-                "docuementMedical=" + docuementMedical +
+                "docuementMedical=" + documentMedical +
                 ", motif='" + motif + '\'' +
                 ", antecedent=" + antecedent +
                 ", TraitementHabituel=" + TraitementHabituel +
@@ -54,11 +54,11 @@ public class DossierMedical {
     }
 
     public List<File> getDocuementMedical() {
-        return docuementMedical;
+        return documentMedical;
     }
 
     public void setDocuementMedical(List<File> docuementMedical) {
-        this.docuementMedical = docuementMedical;
+        this.documentMedical = docuementMedical;
     }
 
     public String getMotif() {
