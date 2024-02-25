@@ -1,11 +1,14 @@
 package com.natixis;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.*;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 
 public class Main {
