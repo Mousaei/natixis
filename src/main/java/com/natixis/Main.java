@@ -10,13 +10,15 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-
+//@RestController
 public class Main {
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
+        //SpringApplication.run(Main.class, args);
+
         InsuranceBeneficiary beneficiary = new InsuranceBeneficiary(2, "toto", "toto", "060709", "toto@gmail.com" ,"75008");
-        System.out.println("The Beneficiary " + beneficiary);
+        System.out.println("The Beneficiary is " + beneficiary);
         beneficiary.setAddress("");
 
         beneficiary.setEmail("");
@@ -25,7 +27,7 @@ public class Main {
 
         beneficiary.setNss(2);
         beneficiary.setNoTel("");
-        System.out.println("The Beneficiary " + beneficiary.getAddress() + " " +  beneficiary.getFirstName()
+        System.out.println("The Beneficiary is " + beneficiary.getAddress() + " " +  beneficiary.getFirstName()
                 + " " + beneficiary.getName() + " " + beneficiary.getEmail() + " " + beneficiary.getNss() + " " + beneficiary.getNoTel() );
 
 
@@ -66,7 +68,7 @@ public class Main {
         shopCart.setTotal(total);
 
         totalShopCart += totalProduct;
-        System.out.println("Product    Quantity    Price       Total");
+        System.out.println("Product    Quantity    Price       Total-GDMAA");
         jsonBuffer.append("Product    Quantity    Price        Total");
         System.out.println("-------------------------------------------");
         jsonBuffer.append("-------------------------------------------");
